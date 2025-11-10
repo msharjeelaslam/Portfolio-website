@@ -6,6 +6,93 @@
   <link href="./output.css" rel="stylesheet">
 </head>
 <body>
-  <div class="text-4xl black bg-amber-200"> hello world</div>
+  <!--top nav-->
+  <nav class="flex justify-center items-center ">
+
+    <!--container nav div-->
+    <div class="min-w-110 mt-13 border border-black flex justify-between fixed z-10 bg-white">
+    <!--left div in nav-->
+    <div class="flex justify-center items-center">
+      <img class="w-15 h-12" src="logo.JPG" alt="">
+      <div class="text-lg font-sans font-medium">Sharjeel Aslam</div>
+    </div>
+
+    <!--right div in nav-->
+    <div  class="flex justify-center items-center">
+      <svg onclick="showPopup()" id="menuBtnInNav" class="hover:cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
+      <svg onclick="closePopup()" id="crossBtnInNav" class="hidden hover:cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+    </div>
+
+    </div>
+
+  </nav>
+
+  <div class="w-full flex justify-center items-center mt-32 ">
+
+  <!--nav popup-->
+  <div id="popupInNav" class="w-46 h-38 border border-black p-5 translate-x-32 rounded-xl fixed z-10 bg-white hidden">
+    
+    <!--popup content div-->
+    <div class="grid grid-cols-1 gap-y-3 ">
+      <a class="text-base font-sans font-medium text-gray-600" href="">About</a>
+      <a class="text-base font-sans font-medium text-gray-600" href="">Recent work</a>
+      <button class="text-white bg-orange-400 w-34 h-9 rounded-3xl">Work with me?</button>
+    </div>
+    
+  </div>
+  </div>
+
+  <div class="w-100 h-1000 bg-amber-300 -mt-10"> </div>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <script>
+
+    //function to open the nav popup
+    function showPopup(){
+      document.getElementById("menuBtnInNav").style.display = "none"
+      document.getElementById("crossBtnInNav").style.display = "flex"
+      document.getElementById("popupInNav").style.display = "flex"
+    }
+
+
+    //function to close the nav popup
+    function closePopup(){
+      document.getElementById("menuBtnInNav").style.display = "flex"
+      document.getElementById("crossBtnInNav").style.display = "none"
+      document.getElementById("popupInNav").style.display = "none"
+    }
+
+  </script>
+
+
+
 </body>
 </html>
