@@ -6,26 +6,38 @@
   <link href="./output.css" rel="stylesheet">
 </head>
 <body>
-  <!--top nav-->
-  <nav class="flex justify-center items-center ">
 
-    <!--container nav div-->
-    <div class="min-w-110 mt-13 border border-black flex justify-between fixed z-10 bg-white">
-    <!--left div in nav-->
-    <div class="flex justify-center items-center">
+  <!--top nav-->
+<nav class="flex  justify-center items-center">
+
+  <!--container nav div-->
+  <div class=" mt-12 min-h-22 border border-gray-300 fixed z-10 bg-white w-full flex items-center pt-5 px-4">
+    
+    <!--left div in nav (fixed position)-->
+    <div class="flex justify-center items-center mr-auto">
       <img class="w-15 h-12" src="logo.JPG" alt="">
       <div class="text-lg font-sans font-medium">Sharjeel Aslam</div>
     </div>
 
-    <!--right div in nav-->
-    <div  class="flex justify-center items-center">
+    <!--right menubtn div in nav (moves when screen stretches)-->
+    <div id="menucrossBtnDiv" class="flex justify-center items-center ml-auto ">
       <svg onclick="showPopup()" id="menuBtnInNav" class="hover:cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu-icon lucide-menu"><path d="M4 5h16"/><path d="M4 12h16"/><path d="M4 19h16"/></svg>
       <svg onclick="closePopup()" id="crossBtnInNav" class="hidden hover:cursor-pointer" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x-icon lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
     </div>
 
+    <!--right menu div in nav (moves when screen stretches)-->
+    <div id="menudivInNav" class="flex items-center gap-x-10 hidden lg:flex  ">
+      <a class="text-base font-sans font-medium text-gray-600" href="">About</a>
+      <a class="text-base font-sans font-medium text-gray-600" href="">Recent work</a>
+      <button class="text-white bg-orange-400 w-34 h-9 rounded-3xl hover:cursor-pointer">Work with me?</button>
     </div>
 
-  </nav>
+
+
+  </div>
+
+</nav>
+
 
   <div class="w-full flex justify-center items-center mt-32 ">
 
@@ -42,7 +54,13 @@
   </div>
   </div>
 
-  <div class="w-100 h-1000 bg-amber-300 -mt-10"> </div>
+  <!--main div-->
+  <div class=" w-full">
+    <!--content div-->
+    <div class=" px-5 max-w-200 lg:max-w-250 border border-black ">
+      <div class="text-6xl font-sans font-medium leading-18 lg:leading-22 lg:text-[74px]">Hi, I'm Sharjeel Aslam, a passionate frontend web developer specializing in creating responsive and user-friendly websites.</div>
+    </div>
+  </div>
   
 
 
@@ -89,6 +107,39 @@
       document.getElementById("crossBtnInNav").style.display = "none"
       document.getElementById("popupInNav").style.display = "none"
     }
+
+    window.addEventListener("resize", () => {
+            if (window.innerWidth >= 1024) { 
+                document.getElementById("popupInNav").style.display = "none"
+                document.getElementById("menuBtnInNav").style.display = "none"
+                document.getElementById("crossBtnInNav").style.display = "none"
+            }
+
+            if(window.innerWidth < 1024){
+                if( document.getElementById("popupInNav").style.display === "block"){
+                    document.getElementById("menuBtnInNav").style.display = "none"
+                }
+                else{
+                    document.getElementById("menuBtnInNav").style.display = "block"
+                    
+                }
+            }
+        });
+
+
+
+
+
+        // Grab all links inside the popup
+  document.querySelectorAll(" a").forEach(link => {
+    link.addEventListener("click", () => {
+      closePopup();  // call your existing closePopup function
+    });
+  });
+
+    
+
+  
 
   </script>
 
