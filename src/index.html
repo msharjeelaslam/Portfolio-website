@@ -42,7 +42,7 @@
   <div class="w-full flex justify-center items-center mt-32 ">
 
   <!--nav popup-->
-  <div id="popupInNav" class="w-46 h-38 border border-black p-5 translate-x-32 rounded-xl fixed z-10 bg-white hidden">
+  <div id="popupInNav" class="w-46 h-38 border border-black p-5  rounded-xl fixed top-19 right-4   z-10 bg-white hidden">
     
     <!--popup content div-->
     <div class="grid grid-cols-1 gap-y-3 ">
@@ -55,9 +55,9 @@
   </div>
 
   <!--main div-->
-  <div class=" w-full">
+  <div class=" w-full mb-20">
     <!--content div-->
-    <div class=" px-5 max-w-200 lg:max-w-250 border border-black ">
+    <div class=" px-5 max-w-200 lg:max-w-250  ">
       <div class="text-6xl font-sans font-medium leading-18 lg:leading-22 lg:text-[74px]">Hi, I'm Sharjeel Aslam, a passionate frontend web developer specializing in creating responsive and user-friendly websites.</div>
     </div>
   </div>
@@ -84,64 +84,58 @@
 
 
 
-
-
-
-
-
-
-
   <script>
+  const menuBtn = document.getElementById("menuBtnInNav");
+  const crossBtn = document.getElementById("crossBtnInNav");
+  const popup = document.getElementById("popupInNav");
 
-    //function to open the nav popup
-    function showPopup(){
-      document.getElementById("menuBtnInNav").style.display = "none"
-      document.getElementById("crossBtnInNav").style.display = "flex"
-      document.getElementById("popupInNav").style.display = "flex"
+  // open popup
+  function showPopup() {
+    menuBtn.style.display = "none";
+    crossBtn.style.display = "flex";
+    popup.style.display = "flex";
+  }
+
+  // close popup
+  function closePopup() {
+    menuBtn.style.display = "flex";
+    crossBtn.style.display = "none";
+    popup.style.display = "none";
+  }
+
+  function handleResize() {
+    if (window.innerWidth >= 1024) {
+      // large screen → hide buttons & popup
+      menuBtn.style.display = "none";
+      crossBtn.style.display = "none";
+      popup.style.display = "none";
+    } else {
+      // small screen → show correct button depending on popup state
+      if (popup.style.display === "flex") {
+        menuBtn.style.display = "none";
+        crossBtn.style.display = "flex";
+      } else {
+        menuBtn.style.display = "flex";
+        crossBtn.style.display = "none";
+      }
     }
+  }
 
+  window.addEventListener("resize", handleResize);
+  window.addEventListener("load", handleResize); // run once on load
 
-    //function to close the nav popup
-    function closePopup(){
-      document.getElementById("menuBtnInNav").style.display = "flex"
-      document.getElementById("crossBtnInNav").style.display = "none"
-      document.getElementById("popupInNav").style.display = "none"
-    }
-
-    window.addEventListener("resize", () => {
-            if (window.innerWidth >= 1024) { 
-                document.getElementById("popupInNav").style.display = "none"
-                document.getElementById("menuBtnInNav").style.display = "none"
-                document.getElementById("crossBtnInNav").style.display = "none"
-            }
-
-            if(window.innerWidth < 1024){
-                if( document.getElementById("popupInNav").style.display === "block"){
-                    document.getElementById("menuBtnInNav").style.display = "none"
-                }
-                else{
-                    document.getElementById("menuBtnInNav").style.display = "block"
-                    
-                }
-            }
-        });
-
-
-
-
-
-        // Grab all links inside the popup
-  document.querySelectorAll(" a").forEach(link => {
-    link.addEventListener("click", () => {
-      closePopup();  // call your existing closePopup function
-    });
+  // close popup when a link inside it is clicked
+  document.querySelectorAll("#popupInNav a").forEach(link => {
+    link.addEventListener("click", closePopup);
   });
+</script>
 
-    
+
+
+
+
 
   
-
-  </script>
 
 
 
