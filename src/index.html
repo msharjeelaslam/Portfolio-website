@@ -1,5 +1,5 @@
 <!doctype html>
-<html>
+<html class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -27,9 +27,9 @@
 
     <!--right menu div in nav (moves when screen stretches)-->
     <div id="menudivInNav" class="flex items-center gap-x-10 hidden lg:flex  ">
-      <a class="text-base font-sans font-medium text-gray-600" href="">About</a>
-      <a class="text-base font-sans font-medium text-gray-600" href="">Recent work</a>
-      <button class="text-white bg-blue-500 w-34 h-9 rounded-3xl hover:cursor-pointer">Work with me?</button>
+      <a class="text-base font-sans font-medium text-gray-600" href="#aboutme">About</a>
+      <a class="text-base font-sans font-medium text-gray-600 " href="#recentwork ">Recent work</a>
+      <a href="#contactme " class="text-white flex justify-center items-center bg-blue-500 w-34 h-9 rounded-3xl hover:cursor-pointer">Work with me?</a>
     </div>
 
 
@@ -46,9 +46,9 @@
     
     <!--popup content div-->
     <div class="grid grid-cols-1 gap-y-3 ">
-      <a class="text-base font-sans font-medium text-gray-600" href="">About</a>
-      <a class="text-base font-sans font-medium text-gray-600" href="">Recent work</a>
-      <button class="text-white bg-blue-500 w-34 h-9 rounded-3xl hover:cursor-pointer">Work with me?</button>
+      <a class="text-base font-sans font-medium text-gray-600" href="#aboutme">About</a>
+      <a class="text-base font-sans font-medium text-gray-600" href="#recentwork">Recent work</a>
+      <a href="#contactme " class="text-white flex justify-center items-center bg-blue-500 w-34 h-9 rounded-3xl hover:cursor-pointer">Work with me?</a>
     </div>
     
   </div>
@@ -65,12 +65,12 @@
 
 
   <!--main div-->
-  <div class="flex justify-center items-center mb-20">
+  <div id="aboutme" class="flex justify-center items-center mb-20 scroll-mt-20">
     <!--content div-->
     <div class="max-w-110 sm:max-w-124 md:max-w-170 lg:min-w-250 grid grid-cols-1 justify-items-center gap-y-10 ">
 
       <!--about me txt-->
-      <div class="text-2xl font-sans font-bold tracking-widest lg:text-[27px]">About me</div>
+      <div class="text-2xl font-sans font-bold tracking-widest lg:text-[27px] ">About me</div>
 
       <!--about txt & image-->
       <div class="grid grid-cols-1 gap-y-14 justify-items-center lg:grid-cols-2 ">
@@ -83,7 +83,7 @@
   </div>
 
 
-  <div class="flex justify-center items-center">
+  <div id="recentwork" class="flex justify-center items-center scroll-mt-22">
     <div class="text-xl md:text-2xl font-sans font-bold">My Recent Work</div>
   </div>
 
@@ -147,7 +147,7 @@
 
   
 
-  <div class="flex justify-center items-center mb-10">
+  <div id="contactme" class="flex justify-center items-center mb-10 scroll-mt-20">
     
     <div class="text-blue-500 text-[40px] md:text-3xl font-sans font-semibold underline underline-offset-6  ">Contact me</div>
     

@@ -253,8 +253,14 @@
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
   }
+  .mt-20 {
+    margin-top: calc(var(--spacing) * 20);
+  }
   .mt-32 {
     margin-top: calc(var(--spacing) * 32);
+  }
+  .mt-40 {
+    margin-top: calc(var(--spacing) * 40);
   }
   .mr-auto {
     margin-right: auto;
@@ -378,6 +384,15 @@
   .resize {
     resize: both;
   }
+  .scroll-mt-20 {
+    scroll-margin-top: calc(var(--spacing) * 20);
+  }
+  .scroll-mt-22 {
+    scroll-margin-top: calc(var(--spacing) * 22);
+  }
+  .scroll-mt-40 {
+    scroll-margin-top: calc(var(--spacing) * 40);
+  }
   .grid-cols-1 {
     grid-template-columns: repeat(1, minmax(0, 1fr));
   }
@@ -437,6 +452,9 @@
   }
   .gap-y-20 {
     row-gap: calc(var(--spacing) * 20);
+  }
+  .scroll-smooth {
+    scroll-behavior: smooth;
   }
   .rounded-2xl {
     border-radius: var(--radius-2xl);
@@ -695,9 +713,29 @@
       max-height: calc(var(--spacing) * 130);
     }
   }
+  .md\:max-w-160 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 160);
+    }
+  }
   .md\:max-w-170 {
     @media (width >= 48rem) {
       max-width: calc(var(--spacing) * 170);
+    }
+  }
+  .md\:max-w-177 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 177);
+    }
+  }
+  .md\:max-w-178 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 178);
+    }
+  }
+  .md\:max-w-180 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 180);
     }
   }
   .md\:max-w-190 {
@@ -705,9 +743,19 @@
       max-width: calc(var(--spacing) * 190);
     }
   }
+  .md\:max-w-200 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 200);
+    }
+  }
   .md\:max-w-210 {
     @media (width >= 48rem) {
       max-width: calc(var(--spacing) * 210);
+    }
+  }
+  .md\:max-w-220 {
+    @media (width >= 48rem) {
+      max-width: calc(var(--spacing) * 220);
     }
   }
   .md\:max-w-226 {
@@ -800,9 +848,19 @@
       max-height: calc(var(--spacing) * 110);
     }
   }
+  .lg\:max-w-220 {
+    @media (width >= 64rem) {
+      max-width: calc(var(--spacing) * 220);
+    }
+  }
   .lg\:max-w-240 {
     @media (width >= 64rem) {
       max-width: calc(var(--spacing) * 240);
+    }
+  }
+  .lg\:max-w-242 {
+    @media (width >= 64rem) {
+      max-width: calc(var(--spacing) * 242);
     }
   }
   .lg\:max-w-250 {
@@ -823,6 +881,11 @@
   .lg\:max-w-290 {
     @media (width >= 64rem) {
       max-width: calc(var(--spacing) * 290);
+    }
+  }
+  .lg\:max-w-300 {
+    @media (width >= 64rem) {
+      max-width: calc(var(--spacing) * 300);
     }
   }
   .lg\:max-w-304 {
@@ -865,6 +928,11 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
+  .lg\:grid-cols-3 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
   .lg\:gap-x-8 {
     @media (width >= 64rem) {
       column-gap: calc(var(--spacing) * 8);
@@ -904,57 +972,6 @@
   }
 }
 @property --tw-translate-x {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-y {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-translate-z {
-  syntax: "*";
-  inherits: false;
-  initial-value: 0;
-}
-@property --tw-border-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@property --tw-leading {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-font-weight {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-tracking {
-  syntax: "*";
-  inherits: false;
-}
-@property --tw-outline-style {
-  syntax: "*";
-  inherits: false;
-  initial-value: solid;
-}
-@layer properties {
-  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
-    *, ::before, ::after, ::backdrop {
-      --tw-translate-x: 0;
-      --tw-translate-y: 0;
-      --tw-translate-z: 0;
-      --tw-border-style: solid;
-      --tw-leading: initial;
-      --tw-font-weight: initial;
-      --tw-tracking: initial;
-      --tw-outline-style: solid;
-    }
-  }
-}
-anslate-x {
   syntax: "*";
   inherits: false;
   initial-value: 0;
